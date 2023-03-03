@@ -1,43 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./index.css";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { Button } from "@mui/material";
 
 export default function Header() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <Link to="/">
-              <a href="home" className="nav-item nav-link">
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              {" "}
+              <Link className="boxItem" to="/">
                 Home
-              </a>{" "}
-            </Link>
-            <Link to="/pricing">
-              <a href="pricing" className="nav-item nav-link">
-                Pricing
-              </a>{" "}
-            </Link>
-            <Link to="/gallary">
+              </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               {" "}
-              <a href="gallary" className="nav-item nav-link">
-                Gallary
-              </a>
-            </Link>
-            <Link to="/contact">
-              {" "}
-              <a href="contact" className="nav-item nav-link">
+              <Link className="boxItem" to="/contact">
                 Contact
-              </a>
-            </Link>
-            <Link to="/appfeature">
+              </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               {" "}
-              <a href="appfeature" className="nav-item nav-link">
+              <Link className="boxItem" to="/pricing">
+                Pricing
+              </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              {" "}
+              <Link className="boxItem" to="/appfeature">
                 App Feature
-              </a>
-            </Link>
-          </div>
-        </div>
-      </nav>
+              </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              {" "}
+              <Link className="boxItem" to="/gallary">
+                Gallary
+              </Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              {" "}
+              <Link className="btn" to="/button">
+                <Button variant="contained" color="success">
+                  LOGIN
+                </Button>
+              </Link>
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </Box>
     </div>
   );
 }
